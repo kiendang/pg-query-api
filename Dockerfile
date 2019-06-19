@@ -1,12 +1,11 @@
 FROM ruby:2.6-alpine
 
-RUN apk add --update \
-    build-base \
-  && rm -rf /var/cache/apk/*
-
-RUN gem install --no-document \
-    pg_query \
-    sinatra
+RUN apk add --update build-base && \
+    gem install --no-document \
+      pg_query \
+      sinatra && \
+    apk del build-base && \
+    rm -rf /var/cache/apk/*
 
 COPY app.rb app.rb
 
