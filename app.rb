@@ -13,7 +13,7 @@ post '/parse' do
 
   data = JSON.parse(request.body.read)
   if data.has_key?('query')
-    PgQuery.parse(data['query']).tree[0].to_json
+    PgQuery.parse(data['query']).tree.to_json
   else
     status 400
   end
