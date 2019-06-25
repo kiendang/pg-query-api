@@ -5,7 +5,7 @@ docker build . -t pg_query
 ```
 
 ```sh
-docker run -p 4567:4567 --rm -it -name pg_query pg_query
+docker run -p 4567:4567 --rm -it --name pg_query pg_query
 ```
 
 ```sh
