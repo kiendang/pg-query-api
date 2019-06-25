@@ -1,7 +1,7 @@
 FROM ruby:2.6-alpine
 
 RUN apk add --update build-base && \
-    gem install --no-document \
+    gem install --no-document -V \
       pg_query \
       sinatra && \
     apk del build-base && \
